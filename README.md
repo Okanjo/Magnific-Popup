@@ -1,6 +1,22 @@
-# Magnific Popup Repository
 
-[![Build Status](https://travis-ci.org/dimsemenov/Magnific-Popup.png)](https://travis-ci.org/dimsemenov/Magnific-Popup)
+This is Okanjo's fork of the [Original Magnific-Popup repository](https://github.com/dimsemenov/Magnific-Popup).
+
+## Okanjo Fork Changes
+Added ability to change namespace and class prefix programmatically during load initialization. For example:
+```html
+<!-- Custom non-conflicting css -->
+<style>.okanjo-mfp-bg {/*...*/} .okanjo-mfp-wrap {/*...*/} /*...*/</style>
+
+<!-- Set the MFP namespace -->
+<script>var okanjo = window.okanjo = { mfp_ns: 'okanjo-mfp' };</script>
+
+<!-- Load up MFP -->
+<script src="jquery.magnific-popup.min.js"></script>
+```
+
+[Okanjo Live JsFiddle Example](http://jsfiddle.net/kfitzgerald/ju5ccLxq/1/)
+
+# Magnific Popup Repository
 
 Fast, light and responsive lightbox plugin, for jQuery and Zepto.js.
 
