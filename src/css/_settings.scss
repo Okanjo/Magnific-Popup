@@ -3,43 +3,43 @@
 ////////////////////////
 
 // overlay
-$mfp-overlay-color:                   #0b0b0b;                    // Color of overlay screen
-$mfp-overlay-opacity:                 0.8;                        // Opacity of overlay screen
-$mfp-shadow:                          0 0 8px rgba(0, 0, 0, 0.6); // Shadow on image or iframe
+$okanjo-ac-mfpoverlay-color:                   #0b0b0b;                    // Color of overlay screen
+$okanjo-ac-mfpoverlay-opacity:                 0.8;                        // Opacity of overlay screen
+$okanjo-ac-mfpshadow:                          0 0 8px rgba(0, 0, 0, 0.6); // Shadow on image or iframe
 
 // spacing
-$mfp-popup-padding-left:              8px;                        // Padding from left and from right side
-$mfp-popup-padding-left-mobile:       6px;                        // Same as above, but is applied when width of window is less than 800px
+$okanjo-ac-mfppopup-padding-left:              8px;                        // Padding from left and from right side
+$okanjo-ac-mfppopup-padding-left-mobile:       6px;                        // Same as above, but is applied when width of window is less than 800px
 
-$mfp-z-index-base:                    1040;                        // Base z-index of popup
+$okanjo-ac-mfpz-index-base:                    1040;                        // Base z-index of popup
 
 // controls
-$mfp-include-arrows:                  true;                       // Include styles for nav arrows
-$mfp-controls-opacity:                0.65;                       // Opacity of controls
-$mfp-controls-color:                  #FFF;                       // Color of controls
-$mfp-controls-border-color:           #3F3F3F; 	                  // Border color of controls
-$mfp-inner-close-icon-color:          #333;                       // Color of close button when inside
-$mfp-controls-text-color:             #CCC;                       // Color of preloader and "1 of X" indicator
-$mfp-controls-text-color-hover:       #FFF;                       // Hover color of preloader and "1 of X" indicator
-$mfp-IE7support:                      true;                       // Very basic IE7 support
+$okanjo-ac-mfpinclude-arrows:                  true;                       // Include styles for nav arrows
+$okanjo-ac-mfpcontrols-opacity:                0.65;                       // Opacity of controls
+$okanjo-ac-mfpcontrols-color:                  #FFF;                       // Color of controls
+$okanjo-ac-mfpcontrols-border-color:           #3F3F3F; 	                  // Border color of controls
+$okanjo-ac-mfpinner-close-icon-color:          #333;                       // Color of close button when inside
+$okanjo-ac-mfpcontrols-text-color:             #CCC;                       // Color of preloader and "1 of X" indicator
+$okanjo-ac-mfpcontrols-text-color-hover:       #FFF;                       // Hover color of preloader and "1 of X" indicator
+$okanjo-ac-mfpIE7support:                      true;                       // Very basic IE7 support
 
 // Iframe-type options
-$mfp-include-iframe-type:             true;                       // Enable Iframe-type popups
-$mfp-iframe-padding-top:              40px;                       // Iframe padding top
-$mfp-iframe-background:               #000;                       // Background color of iframes
-$mfp-iframe-max-width:                900px;                      // Maximum width of iframes
-$mfp-iframe-ratio:                    9/16;                       // Ratio of iframe (9/16 = widescreen, 3/4 = standard, etc.)
+$okanjo-ac-mfpinclude-iframe-type:             true;                       // Enable Iframe-type popups
+$okanjo-ac-mfpiframe-padding-top:              40px;                       // Iframe padding top
+$okanjo-ac-mfpiframe-background:               #000;                       // Background color of iframes
+$okanjo-ac-mfpiframe-max-width:                900px;                      // Maximum width of iframes
+$okanjo-ac-mfpiframe-ratio:                    9/16;                       // Ratio of iframe (9/16 = widescreen, 3/4 = standard, etc.)
 
 // Image-type options
-$mfp-include-image-type:              true;                       // Enable Image-type popups
-$mfp-image-background:                #444 !default;
-$mfp-image-padding-top:               40px;                       // Image padding top
-$mfp-image-padding-bottom:            40px;                       // Image padding bottom
-$mfp-include-mobile-layout-for-image: true;                       // Removes paddings from top and bottom
+$okanjo-ac-mfpinclude-image-type:              true;                       // Enable Image-type popups
+$okanjo-ac-mfpimage-background:                #444 !default;
+$okanjo-ac-mfpimage-padding-top:               40px;                       // Image padding top
+$okanjo-ac-mfpimage-padding-bottom:            40px;                       // Image padding bottom
+$okanjo-ac-mfpinclude-mobile-layout-for-image: true;                       // Removes paddings from top and bottom
 
 // Image caption options
-$mfp-caption-title-color:             #F3F3F3;                    // Caption title color
-$mfp-caption-subtitle-color:          #BDBDBD;                    // Caption subtitle color
+$okanjo-ac-mfpcaption-title-color:             #F3F3F3;                    // Caption title color
+$okanjo-ac-mfpcaption-subtitle-color:          #BDBDBD;                    // Caption subtitle color
 
 // A11y
-$mfp-use-visuallyhidden:              false; 
+$okanjo-ac-mfpuse-visuallyhidden:              false;

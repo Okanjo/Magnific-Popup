@@ -134,7 +134,7 @@ module.exports = function(grunt) {
     var files = this.data.src,
         includes = grunt.option('mfp-exclude'),
         basePath = this.data.basePath,
-        newContents = this.data.banner + ";(function($) {\n";
+        newContents = this.data.banner + ";(function($,opts) {\n";
 
 
     if(includes) {
@@ -169,7 +169,7 @@ module.exports = function(grunt) {
       newContents += grunt.file.read( basePath + name + '.js' ) + '\n';
       newContents += "\n/*>>"+name+"*/\n"; 
     });
-    newContents+= " _checkInstance(); })(window.jQuery || window.Zepto);";
+    newContents+= " _checkInstance(); })(window.jQuery || window.Zepto, window.okanjo || {});";
 
     grunt.file.write( this.data.dest, newContents );
   });

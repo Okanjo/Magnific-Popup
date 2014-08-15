@@ -18,19 +18,19 @@ var _imgInterval,
 $.magnificPopup.registerModule('image', {
 
 	options: {
-		markup: '<div class="mfp-figure">'+
-					'<div class="mfp-close"></div>'+
+		markup: '<div class="'+CSS_PREFIX+'figure">'+
+					'<div class="'+CSS_PREFIX+'close"></div>'+
 					'<figure>'+
-						'<div class="mfp-img"></div>'+
+						'<div class="'+CSS_PREFIX+'img"></div>'+
 						'<figcaption>'+
-							'<div class="mfp-bottom-bar">'+
-								'<div class="mfp-title"></div>'+
-								'<div class="mfp-counter"></div>'+
+							'<div class="'+CSS_PREFIX+'bottom-bar">'+
+								'<div class="'+CSS_PREFIX+'title"></div>'+
+								'<div class="'+CSS_PREFIX+'counter"></div>'+
 							'</div>'+
 						'</figcaption>'+
 					'</figure>'+
 				'</div>',
-		cursor: 'mfp-zoom-out-cur',
+		cursor: CSS_PREFIX+'zoom-out-cur',
 		titleSrc: 'title', 
 		verticalFit: true,
 		tError: '<a href="%url%">The image</a> could not be loaded.'
@@ -89,7 +89,7 @@ $.magnificPopup.registerModule('image', {
 
 				if(item.imgHidden) {
 					if(mfp.content)
-						mfp.content.removeClass('mfp-loading');
+						mfp.content.removeClass(CSS_PREFIX+'loading');
 					
 					item.imgHidden = false;
 				}
@@ -185,10 +185,10 @@ $.magnificPopup.registerModule('image', {
 				imgSt = mfp.st.image;
 
 
-			var el = template.find('.mfp-img');
+			var el = template.find('.'+CSS_PREFIX+'img');
 			if(el.length) {
 				var img = document.createElement('img');
-				img.className = 'mfp-img';
+				img.className = CSS_PREFIX+'img';
 				item.img = $(img).on('load.mfploader', onLoadComplete).on('error.mfploader', onLoadError);
 				img.src = item.src;
 
@@ -217,10 +217,10 @@ $.magnificPopup.registerModule('image', {
 				if(_imgInterval) clearInterval(_imgInterval);
 
 				if(item.loadError) {
-					template.addClass('mfp-loading');
+					template.addClass(CSS_PREFIX+'loading');
 					mfp.updateStatus('error', imgSt.tError.replace('%url%', item.src) );
 				} else {
-					template.removeClass('mfp-loading');
+					template.removeClass(CSS_PREFIX+'loading');
 					mfp.updateStatus('ready');
 				}
 				return template;
@@ -231,7 +231,7 @@ $.magnificPopup.registerModule('image', {
 
 			if(!item.hasSize) {
 				item.imgHidden = true;
-				template.addClass('mfp-loading');
+				template.addClass(CSS_PREFIX+'loading');
 				mfp.findImageSize(item);
 			} 
 

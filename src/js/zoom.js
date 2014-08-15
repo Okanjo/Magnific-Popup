@@ -30,7 +30,7 @@ $.magnificPopup.registerModule('zoom', {
 
 			var duration = zoomSt.duration,
 				getElToAnimate = function(image) {
-					var newImg = image.clone().removeAttr('style').removeAttr('class').addClass('mfp-animated-image'),
+					var newImg = image.clone().removeAttr('style').removeAttr('class').addClass(CSS_PREFIX+'animated-image'),
 						transition = 'all '+(zoomSt.duration/1000)+'s ' + zoomSt.easing,
 						cssObj = {
 							position: 'fixed',

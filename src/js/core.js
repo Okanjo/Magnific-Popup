@@ -15,11 +15,12 @@ var CLOSE_EVENT = 'Close',
 	MARKUP_PARSE_EVENT = 'MarkupParse',
 	OPEN_EVENT = 'Open',
 	CHANGE_EVENT = 'Change',
-	NS = 'mfp',
-	EVENT_NS = '.' + NS,
-	READY_CLASS = 'mfp-ready',
-	REMOVING_CLASS = 'mfp-removing',
-	PREVENT_CLOSE_CLASS = 'mfp-prevent-close';
+    NS = opts.mfp_ns || 'mfp', // e.g. okanjo.mfp_ns = 'okanjo-ac';
+    EVENT_NS = '.' + NS,
+    CSS_PREFIX = NS+'-',
+	READY_CLASS = CSS_PREFIX+'ready',
+	REMOVING_CLASS = CSS_PREFIX+'removing',
+	PREVENT_CLOSE_CLASS = CSS_PREFIX+'prevent-close';
 
 
 /**
@@ -45,7 +46,7 @@ var _mfpOn = function(name, f) {
 	},
 	_getEl = function(className, appendTo, html, raw) {
 		var el = document.createElement('div');
-		el.className = 'mfp-'+className;
+		el.className = CSS_PREFIX+className;
 		if(html) {
 			el.innerHTML = html;
 		}
@@ -245,12 +246,12 @@ MagnificPopup.prototype = {
 				_mfpOn(MARKUP_PARSE_EVENT, function(e, template, values, item) {
 					values.close_replaceWith = _getCloseBtn(item.type);
 				});
-				_wrapClasses += ' mfp-close-btn-in';
+				_wrapClasses += ' '+CSS_PREFIX+'close-btn-in';
 			}
 		}
 
 		if(mfp.st.alignTop) {
-			_wrapClasses += ' mfp-align-top';
+			_wrapClasses += ' '+CSS_PREFIX+'align-top';
 		}
 
 	
@@ -291,7 +292,7 @@ MagnificPopup.prototype = {
 
 
 		if(!mfp.st.closeOnContentClick) {
-			_wrapClasses += ' mfp-auto-cursor';
+			_wrapClasses += ' '+CSS_PREFIX+'auto-cursor';
 		}
 		
 		if(_wrapClasses)
@@ -326,7 +327,7 @@ MagnificPopup.prototype = {
 		
 		var classesToadd = mfp.st.mainClass;
 		if(mfp.isIE7) {
-			classesToadd += ' mfp-ie7';
+			classesToadd += ' '+CSS_PREFIX+'ie7';
 		}
 		if(classesToadd) {
 			mfp._addClassToMFP( classesToadd );
@@ -420,9 +421,9 @@ MagnificPopup.prototype = {
 		mfp.ev.off(EVENT_NS);
 
 		// clean up DOM elements that aren't removed
-		mfp.wrap.attr('class', 'mfp-wrap').removeAttr('style');
-		mfp.bgOverlay.attr('class', 'mfp-bg');
-		mfp.container.attr('class', 'mfp-container');
+		mfp.wrap.attr('class', CSS_PREFIX+'wrap').removeAttr('style');
+		mfp.bgOverlay.attr('class', CSS_PREFIX+'bg');
+		mfp.container.attr('class', CSS_PREFIX+'container');
 
 		// remove close button from target element
 		if(mfp.st.showCloseBtn &&
@@ -506,7 +507,7 @@ MagnificPopup.prototype = {
 		}
 
 		if(_prevContentType && _prevContentType !== item.type) {
-			mfp.container.removeClass('mfp-'+_prevContentType+'-holder');
+			mfp.container.removeClass(CSS_PREFIX+_prevContentType+'-holder');
 		}
 		
 		var newContent = mfp['get' + type.charAt(0).toUpperCase() + type.slice(1)](item, mfp.currTemplate[type]);
@@ -534,7 +535,7 @@ MagnificPopup.prototype = {
 			if(mfp.st.showCloseBtn && mfp.st.closeBtnInside &&
 				mfp.currTemplate[type] === true) {
 				// if there is no markup, we just append close button element inside
-				if(!mfp.content.find('.mfp-close').length) {
+				if(!mfp.content.find('.'+CSS_PREFIX+'close').length) {
 					mfp.content.append(_getCloseBtn());
 				}
 			} else {
@@ -545,7 +546,7 @@ MagnificPopup.prototype = {
 		}
 
 		_mfpTrigger(BEFORE_APPEND_EVENT);
-		mfp.container.addClass('mfp-'+type+'-holder');
+		mfp.container.addClass(CSS_PREFIX+type+'-holder');
 
 		mfp.contentContainer.append(mfp.content);
 	},
@@ -573,7 +574,7 @@ MagnificPopup.prototype = {
 
 			// check for 'mfp-TYPE' class
 			for(var i = 0; i < types.length; i++) {
-				if( item.el.hasClass('mfp-'+types[i]) ) {
+				if( item.el.hasClass(CSS_PREFIX+types[i]) ) {
 					type = types[i];
 					break;
 				}
@@ -671,7 +672,7 @@ MagnificPopup.prototype = {
 
 		if(mfp.preloader) {
 			if(_prevStatus !== status) {
-				mfp.container.removeClass('mfp-s-'+_prevStatus);
+				mfp.container.removeClass(CSS_PREFIX+'s-'+_prevStatus);
 			}
 
 			if(!text && status === 'loading') {
@@ -694,7 +695,7 @@ MagnificPopup.prototype = {
 				e.stopImmediatePropagation();
 			});
 
-			mfp.container.addClass('mfp-s-'+status);
+			mfp.container.addClass(CSS_PREFIX+'s-'+status);
 			_prevStatus = status;
 		}
 	},
@@ -719,7 +720,7 @@ MagnificPopup.prototype = {
 		} else {
 
 			// We close the popup if click is on close button or on preloader. Or if there is no content.
-			if(!mfp.content || $(target).hasClass('mfp-close') || (mfp.preloader && target === mfp.preloader[0]) ) {
+			if(!mfp.content || $(target).hasClass(CSS_PREFIX+'close') || (mfp.preloader && target === mfp.preloader[0]) ) {
 				return true;
 			}
 
@@ -890,7 +891,7 @@ $.magnificPopup = {
 
 		overflowY: 'auto',
 
-		closeMarkup: '<button title="%title%" type="button" class="mfp-close">&times;</button>',
+		closeMarkup: '<button title="%title%" type="button" class="'+CSS_PREFIX+'close">&times;</button>',
 
 		tClose: 'Close (Esc)',
 

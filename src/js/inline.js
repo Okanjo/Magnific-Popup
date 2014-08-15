@@ -42,7 +42,7 @@ $.magnificPopup.registerModule(INLINE_NS, {
 						if(!_inlinePlaceholder) {
 							_hiddenClass = inlineSt.hiddenClass;
 							_inlinePlaceholder = _getEl(_hiddenClass);
-							_hiddenClass = 'mfp-'+_hiddenClass;
+							_hiddenClass = CSS_PREFIX+_hiddenClass;
 						}
 						// replace target inline element with placeholder
 						_lastInlineElement = el.after(_inlinePlaceholder).detach().removeClass(_hiddenClass);

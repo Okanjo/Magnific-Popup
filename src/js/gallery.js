@@ -18,7 +18,7 @@ $.magnificPopup.registerModule('gallery', {
 
 	options: {
 		enabled: false,
-		arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>',
+		arrowMarkup: '<button title="%title%" type="button" class="'+CSS_PREFIX+'arrow '+CSS_PREFIX+'arrow-%dir%"></button>',
 		preload: [0,2],
 		navigateByImgClick: true,
 		arrows: true,
@@ -32,19 +32,19 @@ $.magnificPopup.registerModule('gallery', {
 		initGallery: function() {
 
 			var gSt = mfp.st.gallery,
-				ns = '.mfp-gallery',
+				ns = '.'+CSS_PREFIX+'gallery',
 				supportsFastClick = Boolean($.fn.mfpFastClick);
 
 			mfp.direction = true; // true - next, false - prev
 			
 			if(!gSt || !gSt.enabled ) return false;
 
-			_wrapClasses += ' mfp-gallery';
+			_wrapClasses += ' '+CSS_PREFIX+'gallery';
 
 			_mfpOn(OPEN_EVENT+ns, function() {
 
 				if(gSt.navigateByImgClick) {
-					mfp.wrap.on('click'+ns, '.mfp-img', function() {
+					mfp.wrap.on('click'+ns, '.'+CSS_PREFIX+'img', function() {
 						if(mfp.items.length > 1) {
 							mfp.next();
 							return false;
@@ -162,7 +162,7 @@ $.magnificPopup.registerModule('gallery', {
 			_mfpTrigger('LazyLoad', item);
 
 			if(item.type === 'image') {
-				item.img = $('<img class="mfp-img" />').on('load.mfploader', function() {
+				item.img = $('<img class="'+CSS_PREFIX+'img" />').on('load.mfploader', function() {
 					item.hasSize = true;
 				}).on('error.mfploader', function() {
 					item.hasSize = true;
