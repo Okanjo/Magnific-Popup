@@ -3,43 +3,43 @@
 ////////////////////////
 
 // overlay
-$okanjo-ac-mfpoverlay-color:                   #0b0b0b;                    // Color of overlay screen
-$okanjo-ac-mfpoverlay-opacity:                 0.8;                        // Opacity of overlay screen
-$okanjo-ac-mfpshadow:                          0 0 8px rgba(0, 0, 0, 0.6); // Shadow on image or iframe
+$okanjo-ac-overlay-color:                   #0b0b0b;                    // Color of overlay screen
+$okanjo-ac-overlay-opacity:                 0.8;                        // Opacity of overlay screen
+$okanjo-ac-shadow:                          0 0 8px rgba(0, 0, 0, 0.6); // Shadow on image or iframe
 
 // spacing
-$okanjo-ac-mfppopup-padding-left:              8px;                        // Padding from left and from right side
-$okanjo-ac-mfppopup-padding-left-mobile:       6px;                        // Same as above, but is applied when width of window is less than 800px
+$okanjo-ac-popup-padding-left:              8px;                        // Padding from left and from right side
+$okanjo-ac-popup-padding-left-mobile:       6px;                        // Same as above, but is applied when width of window is less than 800px
 
-$okanjo-ac-mfpz-index-base:                    1040;                        // Base z-index of popup
+$okanjo-ac-z-index-base:                    1040;                        // Base z-index of popup
 
 // controls
-$okanjo-ac-mfpinclude-arrows:                  true;                       // Include styles for nav arrows
-$okanjo-ac-mfpcontrols-opacity:                0.65;                       // Opacity of controls
-$okanjo-ac-mfpcontrols-color:                  #FFF;                       // Color of controls
-$okanjo-ac-mfpcontrols-border-color:           #3F3F3F; 	                  // Border color of controls
-$okanjo-ac-mfpinner-close-icon-color:          #333;                       // Color of close button when inside
-$okanjo-ac-mfpcontrols-text-color:             #CCC;                       // Color of preloader and "1 of X" indicator
-$okanjo-ac-mfpcontrols-text-color-hover:       #FFF;                       // Hover color of preloader and "1 of X" indicator
-$okanjo-ac-mfpIE7support:                      true;                       // Very basic IE7 support
+$okanjo-ac-include-arrows:                  true;                       // Include styles for nav arrows
+$okanjo-ac-controls-opacity:                0.65;                       // Opacity of controls
+$okanjo-ac-controls-color:                  #FFF;                       // Color of controls
+$okanjo-ac-controls-border-color:           #3F3F3F; 	                  // Border color of controls
+$okanjo-ac-inner-close-icon-color:          #333;                       // Color of close button when inside
+$okanjo-ac-controls-text-color:             #CCC;                       // Color of preloader and "1 of X" indicator
+$okanjo-ac-controls-text-color-hover:       #FFF;                       // Hover color of preloader and "1 of X" indicator
+$okanjo-ac-IE7support:                      true;                       // Very basic IE7 support
 
 // Iframe-type options
-$okanjo-ac-mfpinclude-iframe-type:             true;                       // Enable Iframe-type popups
-$okanjo-ac-mfpiframe-padding-top:              40px;                       // Iframe padding top
-$okanjo-ac-mfpiframe-background:               #000;                       // Background color of iframes
-$okanjo-ac-mfpiframe-max-width:                900px;                      // Maximum width of iframes
-$okanjo-ac-mfpiframe-ratio:                    9/16;                       // Ratio of iframe (9/16 = widescreen, 3/4 = standard, etc.)
+$okanjo-ac-include-iframe-type:             true;                       // Enable Iframe-type popups
+$okanjo-ac-iframe-padding-top:              40px;                       // Iframe padding top
+$okanjo-ac-iframe-background:               #000;                       // Background color of iframes
+$okanjo-ac-iframe-max-width:                900px;                      // Maximum width of iframes
+$okanjo-ac-iframe-ratio:                    9/16;                       // Ratio of iframe (9/16 = widescreen, 3/4 = standard, etc.)
 
 // Image-type options
-$okanjo-ac-mfpinclude-image-type:              true;                       // Enable Image-type popups
-$okanjo-ac-mfpimage-background:                #444 !default;
-$okanjo-ac-mfpimage-padding-top:               40px;                       // Image padding top
-$okanjo-ac-mfpimage-padding-bottom:            40px;                       // Image padding bottom
-$okanjo-ac-mfpinclude-mobile-layout-for-image: true;                       // Removes paddings from top and bottom
+$okanjo-ac-include-image-type:              true;                       // Enable Image-type popups
+$okanjo-ac-image-background:                #444 !default;
+$okanjo-ac-image-padding-top:               40px;                       // Image padding top
+$okanjo-ac-image-padding-bottom:            40px;                       // Image padding bottom
+$okanjo-ac-include-mobile-layout-for-image: true;                       // Removes paddings from top and bottom
 
 // Image caption options
-$okanjo-ac-mfpcaption-title-color:             #F3F3F3;                    // Caption title color
-$okanjo-ac-mfpcaption-subtitle-color:          #BDBDBD;                    // Caption subtitle color
+$okanjo-ac-caption-title-color:             #F3F3F3;                    // Caption title color
+$okanjo-ac-caption-subtitle-color:          #BDBDBD;                    // Caption subtitle color
 
 // A11y
-$okanjo-ac-mfpuse-visuallyhidden:              false;
+$okanjo-ac-use-visuallyhidden:              false;
