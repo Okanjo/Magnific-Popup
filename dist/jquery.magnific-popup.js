@@ -1,6 +1,4 @@
-/*! Magnific Popup - v0.9.9 - 2014-08-15
-* http://dimsemenov.com/plugins/magnific-popup/
-* Copyright (c) 2014 Dmitry Semenov; */
+/*! Magnific Popup - v0.9.9 - 2014-11-03 | Forked by Okanjo https://github.com/Okanjo/Magnific-Popup | http://dimsemenov.com/plugins/magnific-popup/ |  Copyright (c) 2014 Dmitry Semenov; */
 ;(function($,opts) {
 
 /*>>core*/
@@ -2047,4 +2045,4 @@ $.magnificPopup.registerModule(RETINA_NS, {
 })();
 
 /*>>fastclick*/
- _checkInstance(); })(window.jQuery || window.Zepto, window.okanjo || {});
+ _checkInstance(); })((okanjo && okanjo.jQuery) || window.jQuery || window.Zepto, window.okanjo || {});

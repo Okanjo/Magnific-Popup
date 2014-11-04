@@ -23,9 +23,9 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('magnific-popup.jquery.json'),
 
     banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
-      '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
-      '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-      '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>; */\n',
+      '<%= grunt.template.today("yyyy-mm-dd") %> | Forked by Okanjo https://github.com/Okanjo/Magnific-Popup | ' +
+      '<%= pkg.homepage ? pkg.homepage + " | " : "" %>' +
+      ' Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>; */\n',
 
     // Task configuration.
     clean: {
@@ -169,7 +169,7 @@ module.exports = function(grunt) {
       newContents += grunt.file.read( basePath + name + '.js' ) + '\n';
       newContents += "\n/*>>"+name+"*/\n"; 
     });
-    newContents+= " _checkInstance(); })(window.jQuery || window.Zepto, window.okanjo || {});";
+    newContents+= " _checkInstance(); })((okanjo && okanjo.jQuery) || window.jQuery || window.Zepto, window.okanjo || {});";
 
     grunt.file.write( this.data.dest, newContents );
   });
